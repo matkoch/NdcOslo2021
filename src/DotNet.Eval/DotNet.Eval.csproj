@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <OutputType>Exe</OutputType>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <IsPackable>true</IsPackable>
+        <PackAsTool>true</PackAsTool>
+        <RollForward>LatestMajor</RollForward>
+        <PackageId>matkoch.dotnet-eval</PackageId>
+        <ToolCommandName>dotnet-eval</ToolCommandName>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.0.1" />
+    </ItemGroup>
+
+</Project>

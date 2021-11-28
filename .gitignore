@@ -1,5 +1,8 @@
 bin/
 obj/
+/output
+.idea/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+/.nuke/temp

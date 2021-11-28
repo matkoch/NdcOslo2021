@@ -11,11 +11,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Nuke.Common" Version="6.0.0-beta0001" />
+    <PackageReference Include="Nuke.Common" Version="6.0.0-beta0009" />
+    <PackageReference Include="matkoch.nuke.notifications" Version="0.1.27" />
+    <PackageDownload Include="GitVersion.Tool" Version="[5.8.0]" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageDownload Include="GitVersion.Tool" Version="[5.8.0]" />
+<!--    <Compile Remove="Build.CI.*.cs" />-->
+<!--    <Compile Remove="Components\*.cs" />-->
   </ItemGroup>
 
 </Project>

@@ -56,6 +56,18 @@ partial class Build : NukeBuild, IPack, IPublish
                 .When(IsServerBuild, _ => _
                     .EnableContinuousIntegrationBuild()
                     .EnableDeterministic()));
+
+            var publishConfigurations =
+                from project in new[] { Solution.DotNet_Eval }
+                from framework in project.GetTargetFrameworks()
+                select (project, framework);
+
+            DotNetPublish(_ => _
+                .SetConfiguration(Configuration)
+                .EnableNoBuild()
+                .CombineWith(publishConfigurations, (_, c) => _
+                    .SetProject(c.project)
+                    .SetFramework(c.framework)));
         });
 
     [GitVersion] readonly GitVersion GitVersion;

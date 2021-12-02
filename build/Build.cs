@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Components;
 using Nuke.Common;
 using Nuke.Common.CI.GitHubActions;
@@ -30,7 +31,7 @@ partial class Build : NukeBuild, IPack, IPublish
     [Parameter("Configuration to build - Default is 'Debug' (local) or 'Release' (server)")]
     readonly Configuration Configuration = IsLocalBuild ? Configuration.Debug : Configuration.Release;
 
-    [Solution] readonly Solution Solution;
+    [Solution(GenerateProjects = true)] readonly Solution Solution;
 
     Target Clean => _ => _
         .Before(Restore)

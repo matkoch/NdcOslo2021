@@ -68,6 +68,7 @@ object Pack : BuildType({
         root(DslContext.settingsRoot)
         cleanCheckout = true
     }
+    artifactRules = "output/*.nupkg => output"
     steps {
         exec {
             path = "build.cmd"

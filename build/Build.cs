@@ -63,6 +63,7 @@ partial class Build : NukeBuild, IPack, IPublish
 
     Target IPack.Pack => _ => _
         .DependsOn(Compile)
+        .Produces(OutputDirectory / "*.nupkg")
         .Executes(() =>
         {
             DotNetPack(_ => _

@@ -37,3 +37,7 @@ jobs:
           NUKE_ENTERPRISE_HOST: ${{ secrets.NUKE_ENTERPRISE_HOST }}
           NUKE_ENTERPRISE_TOKEN: ${{ secrets.NUKE_ENTERPRISE_TOKEN }}
           GITHUB_CONTEXT: ${{ toJSON(github) }}
+      - uses: actions/upload-artifact@v1
+        with:
+          name: output
+          path: output

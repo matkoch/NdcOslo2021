@@ -43,3 +43,7 @@ stages:
             env:
               NUKE_ENTERPRISE_HOST: $(NUKE_ENTERPRISE_HOST)
               NUKE_ENTERPRISE_TOKEN: $(NUKE_ENTERPRISE_TOKEN)
+          - task: PublishBuildArtifacts@1
+            inputs:
+              artifactName: output
+              pathtoPublish: 'output'

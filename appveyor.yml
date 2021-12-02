@@ -21,6 +21,9 @@ build_script:
   - cmd: .\build.cmd Pack
   - sh: ./build.cmd Pack
 
+artifacts:
+  - path: output/*.nupkg
+
 environment:
   NUKE_ENTERPRISE_TOKEN:
     secure: ma9vIzhc2M4tFXv6eMc96bZs29aQ+kn/D5p9a3wUxB0RNeqBFpq+7vz3b+e0Ojvm

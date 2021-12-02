@@ -7,10 +7,10 @@ using Nuke.Notifications;
     InvokedTargets = new[] { nameof(IPack.Pack) })]
 [AppVeyorSecret(
     Notifications.TokenVariableName,
-    "1yO8I+O+P37tItVjl+MywWFTslE4IPkzLBXvhwFflAg0mRdXP9jcyfyILqBTdwOk")]
+    "ma9vIzhc2M4tFXv6eMc96bZs29aQ+kn/D5p9a3wUxB0RNeqBFpq+7vz3b+e0Ojvm")]
 [AppVeyorSecret(
     Notifications.HostVariableName,
-    "fdssEbE2DBBIVFoPFISqaCxD0E2KKyfEaUqbQz2AQ5vYbGrnYwVjdsP9vNZiYH9ddk93c2g95vXd22o3RLWpGQ==")]
+    "1V/SfJ7gFv9zPLT4nVdfXrJ+aSvNJS3YLRuBCOWwec+KlqDnHuGDMv6PwW1TJtau")]
 partial class Build
 {
 }

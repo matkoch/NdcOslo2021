@@ -31,13 +31,9 @@ jobs:
             .nuke/temp
             ~/.nuget/packages
           key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
-      - name: Run './build.cmd Pack'
-        run: ./build.cmd Pack
+      - name: Run './build.cmd Compile'
+        run: ./build.cmd Compile
         env:
           NUKE_ENTERPRISE_HOST: ${{ secrets.NUKE_ENTERPRISE_HOST }}
           NUKE_ENTERPRISE_TOKEN: ${{ secrets.NUKE_ENTERPRISE_TOKEN }}
           GITHUB_CONTEXT: ${{ toJSON(github) }}
-      - uses: actions/upload-artifact@v1
-        with:
-          name: output
-          path: output

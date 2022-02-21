@@ -4,8 +4,10 @@ namespace DotNet.Eval.Tests;
 
 public class UnitTests
 {
+    // ReSharper SDK
     [Fact]
-    public void Test()
+    public void TESST()
     {
+        TESST();
     }
 }

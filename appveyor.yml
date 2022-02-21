@@ -18,11 +18,8 @@ image:
   - Ubuntu
 
 build_script:
-  - cmd: .\build.cmd Pack
-  - sh: ./build.cmd Pack
-
-artifacts:
-  - path: output/*.nupkg
+  - cmd: .\build.cmd Compile
+  - sh: ./build.cmd Compile
 
 environment:
   NUKE_ENTERPRISE_TOKEN:

@@ -26,7 +26,7 @@ job("continuous") {
         env["NUKE_ENTERPRISE_HOST"] = Secrets("nuke_enterprise_host")
         env["NUKE_ENTERPRISE_TOKEN"] = Secrets("nuke_enterprise_token")
         shellScript {
-            content = "./build.sh Pack"
+            content = "./build.sh Compile"
         }
     }
 }

@@ -23,9 +23,9 @@ import jetbrains.buildServer.configs.kotlin.v2018_1.vcs.*
 version = "2021.2"
 
 project {
-    buildType(Pack)
+    buildType(Compile)
 
-    buildTypesOrder = arrayListOf(Pack)
+    buildTypesOrder = arrayListOf(Compile)
 
     params {
         select (
@@ -62,29 +62,28 @@ project {
             display = ParameterDisplay.HIDDEN)
     }
 }
-object Pack : BuildType({
-    name = "Pack"
+object Compile : BuildType({
+    name = "Compile"
     vcs {
         root(DslContext.settingsRoot)
         cleanCheckout = true
     }
-    artifactRules = "output/*.nupkg => output"
     steps {
         exec {
             path = "build.cmd"
-            arguments = "Restore Compile Pack --skip"
+            arguments = "Restore Compile --skip"
             conditions { contains("teamcity.agent.jvm.os.name", "Windows") }
         }
         exec {
             path = "build.sh"
-            arguments = "Restore Compile Pack --skip"
+            arguments = "Restore Compile --skip"
             conditions { doesNotContain("teamcity.agent.jvm.os.name", "Windows") }
         }
     }
     params {
         text(
             "teamcity.ui.runButton.caption",
-            "Pack",
+            "Compile",
             display = ParameterDisplay.HIDDEN)
     }
     triggers {

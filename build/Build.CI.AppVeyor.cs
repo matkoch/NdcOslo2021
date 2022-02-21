@@ -4,7 +4,7 @@ using Nuke.Notifications;
 
 [AppVeyor(
     AppVeyorImage.UbuntuLatest,
-    InvokedTargets = new[] { nameof(IPack.Pack) })]
+    InvokedTargets = new[] { nameof(Compile) })]
 [AppVeyorSecret(
     Notifications.TokenVariableName,
     "ma9vIzhc2M4tFXv6eMc96bZs29aQ+kn/D5p9a3wUxB0RNeqBFpq+7vz3b+e0Ojvm")]

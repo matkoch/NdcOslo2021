@@ -21,8 +21,8 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     jobs:
-      - job: Pack
-        displayName: 'Pack'
+      - job: Compile
+        displayName: 'Compile'
         dependsOn: [  ]
         steps:
           - task: Cache@2
@@ -39,11 +39,7 @@ stages:
               path: $(HOME)/.nuget/packages
           - task: CmdLine@2
             inputs:
-              script: './build.cmd Restore Compile Pack --skip'
+              script: './build.cmd Restore Compile --skip'
             env:
               NUKE_ENTERPRISE_HOST: $(NUKE_ENTERPRISE_HOST)
               NUKE_ENTERPRISE_TOKEN: $(NUKE_ENTERPRISE_TOKEN)
-          - task: PublishBuildArtifacts@1
-            inputs:
-              artifactName: output
-              pathtoPublish: 'output'

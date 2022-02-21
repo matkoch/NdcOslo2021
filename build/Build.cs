@@ -17,7 +17,7 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
     GitHubActionsImage.UbuntuLatest,
     On = new[] { GitHubActionsTrigger.Push },
     EnableGitHubContext = true,
-    InvokedTargets = new[] { nameof(IPack.Pack) },
+    InvokedTargets = new[] { nameof(Compile) },
     ImportSecrets = new[] { Notifications.HostVariableName, Notifications.TokenVariableName })]
 partial class Build : NukeBuild, IPack, IPublish
 {
@@ -37,13 +37,11 @@ partial class Build : NukeBuild, IPack, IPublish
         .Before(Restore)
         .Executes(() =>
         {
-
         });
 
     Target Restore => _ => _
         .Executes(() =>
         {
-
             DotNet($"restore {Solution}");
         });
 

@@ -11,7 +11,7 @@ using Nuke.Common.Tools.GitVersion;
 using Nuke.Notifications;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 
-[Notifications(EnableCancellation = true)]
+// [Notifications(EnableCancellation = true)]
 [GitHubActions(
     "continuous",
     GitHubActionsImage.UbuntuLatest,
